@@ -1,2 +1,105 @@
 # Devops-Project-Final
 Final Devops Project
+
+## Command Prompt Screenshots
+
+![Screenshot from 2025-05-09 15-10-23](https://github.com/user-attachments/assets/b76ac0fd-1056-48e9-acd0-515b047fa158)
+
+![Screenshot from 2025-05-09 15-10-40](https://github.com/user-attachments/assets/74953418-15b1-4a1d-ab75-18f474366200)
+
+![Screenshot from 2025-05-09 15-10-56](https://github.com/user-attachments/assets/2e9db05d-f05c-446f-ba15-6d979227de65)
+
+![Screenshot from 2025-05-09 15-12-14](https://github.com/user-attachments/assets/22730317-43e4-476d-b398-f7afd2034c35)
+
+![Screenshot from 2025-05-09 15-13-07](https://github.com/user-attachments/assets/58c8e4e2-e876-4fe9-8e69-595d1922210e)
+
+![Screenshot from 2025-05-09 15-13-17](https://github.com/user-attachments/assets/9c9db1cc-6cb6-4281-a9fa-3c9f93d58452)
+
+## Folder Structure
+
+- project-root/
+  - frontend/
+    - public/
+      - index.html
+    - src/
+      - index.js
+    - package.json
+    - Dockerfile
+  - backend/
+    - application/
+      - application.js
+      - Dockerfile
+      - package.json
+      - .env
+    - auth/
+      - auth.js
+      - Dockerfile
+      - package.json
+      - .env
+    - job/
+      - job.js
+      - Dockerfile
+      - package.json
+      - .env
+  - docker-compose.yml
+
+## Project Files
+
+### `docker-compose.yml`
+```groovy
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - job-portal-network
+    depends_on:
+      - auth
+      - job
+      - application
+
+  auth:
+    build:
+      context: ./backend/auth
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    env_file:
+      - backend/auth/.env
+    networks:
+      - job-portal-network
+
+  job:
+    build:
+      context: ./backend/job
+      dockerfile: Dockerfile
+    ports:
+      - "5002:5002"
+    env_file:
+      - backend/job/.env
+    networks:
+      - job-portal-network
+
+  application:
+    build:
+      context: ./backend/application
+      dockerfile: Dockerfile
+    ports:
+      - "5003:5003"
+    env_file:
+      - backend/application/.env
+    networks:
+      - job-portal-network
+
+networks:
+  job-portal-network:
+    driver: bridge
+```
+
+
+
