@@ -20,7 +20,7 @@ cd project-root
 ```
 ![Screenshot from 2025-05-09 15-12-14](https://github.com/user-attachments/assets/22730317-43e4-476d-b398-f7afd2034c35)
 ```bash
-docker compose ub --build
+docker compose up --build
 ```
 ![Screenshot from 2025-05-09 15-13-07](https://github.com/user-attachments/assets/58c8e4e2-e876-4fe9-8e69-595d1922210e)
 ![Screenshot from 2025-05-09 15-13-17](https://github.com/user-attachments/assets/9c9db1cc-6cb6-4281-a9fa-3c9f93d58452)
