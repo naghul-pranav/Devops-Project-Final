@@ -1,42 +1,52 @@
 # Devops-Project-Final
-Final Devops Project
+Documentation Work of Final Devops Project
 
 ## Command Prompt Screenshots
-
+```bash
+sudo apt-get install docker-compose-plugin
+```
 ![Screenshot from 2025-05-09 15-10-23](https://github.com/user-attachments/assets/b76ac0fd-1056-48e9-acd0-515b047fa158)
-
+```bash
+docker --version
+```
 ![Screenshot from 2025-05-09 15-10-40](https://github.com/user-attachments/assets/74953418-15b1-4a1d-ab75-18f474366200)
-
+```bash
+docker compose version
+```
 ![Screenshot from 2025-05-09 15-10-56](https://github.com/user-attachments/assets/2e9db05d-f05c-446f-ba15-6d979227de65)
-
+```bash
+cd Downloads
+cd project-root
+```
 ![Screenshot from 2025-05-09 15-12-14](https://github.com/user-attachments/assets/22730317-43e4-476d-b398-f7afd2034c35)
-
+```bash
+docker compose ub --build
+```
 ![Screenshot from 2025-05-09 15-13-07](https://github.com/user-attachments/assets/58c8e4e2-e876-4fe9-8e69-595d1922210e)
-
 ![Screenshot from 2025-05-09 15-13-17](https://github.com/user-attachments/assets/9c9db1cc-6cb6-4281-a9fa-3c9f93d58452)
 
 ## Folder Structure
 
-- project-root/
-  - frontend/
-    - public/
+- `project-root/`
+  - `frontend/`
+    - `public/`
       - index.html
-    - src/
+    - `src/`
       - index.js
     - package.json
     - Dockerfile
-  - backend/
-    - application/
+  - `backend/`
+    - `application/`
       - application.js
       - Dockerfile
       - package.json
       - .env
-    - auth/
+    - `auth/`
       - auth.js
       - Dockerfile
       - package.json
       - .env
-    - job/
+    - `job/`
       - job.js
       - Dockerfile
       - package.json
