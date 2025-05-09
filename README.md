@@ -1,6 +1,16 @@
 # Devops-Project-Final
 Documentation Work of Final Devops Project
 
+## Project Details
+
+- `Title:` Microservice Deployment with Docker
+
+- `Description:` Deploy and manage a set of microservices using docker, ensuring they can scale independently 
+
+- `Wants from students:` Create docker containers for each microservice, configure inter-service communication, and manage scaling
+
+- `Proposed tools:` Docker, Docker Compose, Microservices
+
 ## Command Prompt Screenshots
 ```bash
 sudo apt-get install docker-compose-plugin
