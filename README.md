@@ -111,5 +111,20 @@ networks:
     driver: bridge
 ```
 
+## Output Screenshots
+
+- Login Page
+![Screenshot from 2025-05-09 15-53-09](https://github.com/user-attachments/assets/a1a5d43c-802a-403f-a4d1-43c2c3758a10)
+
+- Register Page
+![Screenshot from 2025-05-09 15-53-14](https://github.com/user-attachments/assets/a1a5bbf7-f3b4-4949-949c-8be0f29f9281)
+
+- User Page
+![Screenshot from 2025-05-09 15-53-48](https://github.com/user-attachments/assets/f23ac344-84bd-4f96-bfaa-79bf34febafa)
+![Screenshot from 2025-05-09 15-53-51](https://github.com/user-attachments/assets/47b039f9-2a33-480c-9204-179ee7b0d462)
+
+- Admin Page
+![Screenshot from 2025-05-09 15-54-08](https://github.com/user-attachments/assets/8835890b-1449-43ce-93a6-b72059a1a82e)
+![Screenshot from 2025-05-09 15-54-15](https://github.com/user-attachments/assets/3fd63a41-0d34-421c-bfe9-82d3e45643d0)
 
 
