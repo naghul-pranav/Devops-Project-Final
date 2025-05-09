@@ -24,6 +24,15 @@ docker compose up --build
 ```
 ![Screenshot from 2025-05-09 15-13-07](https://github.com/user-attachments/assets/58c8e4e2-e876-4fe9-8e69-595d1922210e)
 ![Screenshot from 2025-05-09 15-13-17](https://github.com/user-attachments/assets/9c9db1cc-6cb6-4281-a9fa-3c9f93d58452)
+```bash
+docker compose down
+```
+![Screenshot from 2025-05-09 15-58-30](https://github.com/user-attachments/assets/36927486-9380-4bed-96c6-c5ccbaeb25d0)
+```bash
+docker image prune
+```
+![Screenshot from 2025-05-09 15-58-46](https://github.com/user-attachments/assets/cf469c3d-7be5-47ae-b0a3-0df8637757b5)
+
 
 ## Folder Structure
 
