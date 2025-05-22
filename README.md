@@ -51,7 +51,7 @@ docker compose up --build --scale frontend=2 --scale auth=2
 ### `Note` : For using the above scaling command, we need to define `nginx.conf` and modify `docker-compose.yaml`
 
 - `nginx.conf`:
-```bash
+```groovy
 events {}
   http {
     upstream frontend {
@@ -93,7 +93,7 @@ events {}
 ```
 
 - `docker-compose.yaml`
-```bash
+```groovy
 version: '3.8'
 services:
   frontend:
