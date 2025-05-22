@@ -42,6 +42,11 @@ docker compose down
 docker image prune
 ```
 ![Screenshot from 2025-05-09 15-58-46](https://github.com/user-attachments/assets/cf469c3d-7be5-47ae-b0a3-0df8637757b5)
+```bash
+docker compose up --build --scale frontend=2 --scale auth=2
+```
+![Screenshot from 2025-05-22 12-58-06](https://github.com/user-attachments/assets/0e3f1e25-ae7c-4872-822a-72d3359fde26)
+![Screenshot from 2025-05-22 12-58-24](https://github.com/user-attachments/assets/ce9d456b-8a63-4768-9a43-ecd950a5a5c5)
 
 
 ## Folder Structure
