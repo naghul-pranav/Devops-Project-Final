@@ -48,6 +48,113 @@ docker compose up --build --scale frontend=2 --scale auth=2
 ![Screenshot from 2025-05-22 12-58-06](https://github.com/user-attachments/assets/0e3f1e25-ae7c-4872-822a-72d3359fde26)
 ![Screenshot from 2025-05-22 12-58-24](https://github.com/user-attachments/assets/ce9d456b-8a63-4768-9a43-ecd950a5a5c5)
 
+### `Note` : For using the above scaling command, we need to define `nginx.conf` and modify `docker-compose.yaml`
+
+- `nginx.conf`:
+```bash
+events {}
+  http {
+    upstream frontend {
+      server frontend:3000;
+    }
+    upstream auth {
+      server auth:5001;
+    }
+    upstream job {
+      server job:5002;
+    }
+    upstream application {
+      server application:5003;
+    }
+    server {
+      listen 80;
+      location / {
+        proxy_pass http://frontend;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+      }
+      location /api/auth/ {
+        proxy_pass http://auth;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+      }
+      location /api/jobs/ {
+        proxy_pass http://job;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+      }
+      location /api/applications/ {
+        proxy_pass http://application;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+      }
+    }
+  }
+```
+
+- `docker-compose.yaml`
+```bash
+version: '3.8'
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    expose:
+      - "3000"
+    networks:
+      - job-portal-network
+    depends_on:
+      - auth
+      - job
+      - application
+  auth:
+    build:
+      context: ./backend/auth
+      dockerfile: Dockerfile
+    expose:
+      - "5001"
+    env_file:
+      - backend/auth/.env
+    networks:
+      - job-portal-network
+  job:
+    build:
+      context: ./backend/job
+      dockerfile: Dockerfile
+    expose:
+      - "5002"
+    env_file:
+      - backend/job/.env
+    networks:
+      - job-portal-network
+  application:
+    build:
+      context: ./backend/application
+      dockerfile: Dockerfile
+    expose:
+      - "5003"
+    env_file:
+      - backend/application/.env
+    networks:
+      - job-portal-network
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - frontend
+      - auth
+      - job
+      - application
+    networks:
+      - job-portal-network
+networks:
+  job-portal-network:
+    driver: bridge
+```
 
 ## Folder Structure
 
